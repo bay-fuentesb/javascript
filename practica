@@ -1,0 +1,40 @@
+function pedirValores() {
+    const num1 = parseInt(prompt("Dame un valor: "));
+    const num2 = parseInt(prompt("Dame otro valor: "));
+    return [num1, num2];  // Retorna un array con los dos valores
+}
+
+console.log('***** CALCULADORA *****');
+console.log('Elija una opcion');
+console.log('[1] SUMA');
+console.log('[2] RESTA');
+console.log('[3] MULTIPLICACION');
+console.log('[4] DIVISIÓN');
+
+// Pedir la opción al usuario
+const decision = parseInt(prompt("Ingrese una opción: "));
+
+// Obtener los dos números
+const [num1, num2] = pedirValores();
+
+// Dependiendo de la opción seleccionada, realizar la operación
+switch (decision) {
+    case 1:
+        console.log('Suma: ' + (num1 + num2)); // Realizar suma
+        break;
+    case 2:
+        console.log('Resta: ' + (num1 - num2)); // Realizar resta
+        break;
+    case 3:
+        console.log('Multiplicación: ' + (num1 * num2)); // Realizar multiplicación
+        break;
+    case 4:
+        if (num2 !== 0) {
+            console.log('División: ' + (num1 / num2)); // Realizar división
+        } else {
+            console.log('Error: No se puede dividir entre cero.');
+        }
+        break;
+    default:
+        console.log('Opción no válida');
+}
